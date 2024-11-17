@@ -411,6 +411,7 @@ namespace MyGridBot
 
             if (Copy >= 50)
             {
+                Console.ForegroundColor = ConsoleColor.Blue;
                 await NewExcel.SortBuySellMexcAsync();
                 Copy = 0;
                 CopyTable.Copy(@"..\\..\\..\\..\\WorkMexc", @"..\\..\\..\\..\\WorkCopyMexc");

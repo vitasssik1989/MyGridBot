@@ -255,7 +255,9 @@ namespace MyGridBot
                                             else
                                             {
                                                 Console.WriteLine(" Заявка не исполнилась");
-                                                break;
+                                                i = 1;
+                                                Ask = await AskPriceQuantityByBit(bybitRestClient, BuySymbol);
+                                                continue;
                                             }
 
                                         }
@@ -277,7 +279,9 @@ namespace MyGridBot
                                             else
                                             {
                                                 Console.WriteLine(" Заявка не исполнилась");
-                                                break;
+                                                i = 1;
+                                                Ask = await AskPriceQuantityByBit(bybitRestClient, BuySymbol);
+                                                continue;
                                             }
 
                                         }
@@ -400,7 +404,9 @@ namespace MyGridBot
                                         else
                                         {
                                             Console.WriteLine(" Заявка не исполнилась");
-                                            break;
+                                            i = 5002;
+                                            Bid = await BidPriceQuantityByBit(bybitRestClient, SellSymbol);
+                                            continue;
                                         }
                                         await Task.Delay(100);
                                         Bid = await BidPriceQuantityByBit(bybitRestClient, SellSymbol);
@@ -532,7 +538,9 @@ namespace MyGridBot
                                             else
                                             {
                                                 Console.WriteLine(" Заявка не исполнилась");
-                                                break;
+                                                i = 1;
+                                                Ask = await AskPriceQuantityMexc(mexcRestClient, BuySymbol);
+                                                continue;
                                             }
 
                                         }
@@ -554,7 +562,9 @@ namespace MyGridBot
                                             else
                                             {
                                                 Console.WriteLine(" Заявка не исполнилась");
-                                                break;
+                                                i = 1;
+                                                Ask = await AskPriceQuantityMexc(mexcRestClient, BuySymbol);
+                                                continue;
                                             }
 
                                         }
@@ -677,7 +687,9 @@ namespace MyGridBot
                                         else
                                         {
                                             Console.WriteLine(" Заявка не исполнилась");
-                                            break;
+                                            i = 5002;
+                                            Bid = await BidPriceQuantityMexc(mexcRestClient, SellSymbol);
+                                            continue;
                                         }
                                         await Task.Delay(100);
                                         Bid = await BidPriceQuantityMexc(mexcRestClient, SellSymbol);
