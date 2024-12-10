@@ -748,7 +748,7 @@ namespace MyGridBot
                 catch (Exception ex)
                 {
                     Console.WriteLine();
-                    if (CheckExchangeOrderStatus("ByBit", "покупка", BuySymbol, price, quantity))
+                    if (await CheckExchangeOrderStatusByBit("ByBit", "покупка", BuySymbol, price, quantity, bybitRestClient))
                     {
                         return true;
                     }
@@ -774,7 +774,7 @@ namespace MyGridBot
                         catch
                         {
                             Console.WriteLine();
-                            if (CheckExchangeOrderStatus("ByBit", "покупка", BuySymbol, price, quantity))
+                            if (await CheckExchangeOrderStatusByBit("ByBit", "покупка", BuySymbol, price, quantity, bybitRestClient))
                             {
                                 return true;
                             }
@@ -808,7 +808,7 @@ namespace MyGridBot
                         {
                             Console.WriteLine($" {resultOrderBuy.Error.Code} {resultOrderBuy.Error.Message}");
                             Console.WriteLine();
-                            if (CheckExchangeOrderStatus("ByBit", "покупка", BuySymbol, price, quantity))
+                            if (await CheckExchangeOrderStatusByBit("ByBit", "покупка", BuySymbol, price, quantity, bybitRestClient))
                             {
                                 return true;
                             }
@@ -841,7 +841,7 @@ namespace MyGridBot
                         catch
                         {
                             Console.WriteLine();
-                            if (CheckExchangeOrderStatus("ByBit", "покупка", BuySymbol, Ask.Price, quantity))
+                            if (await CheckExchangeOrderStatusByBit("ByBit", "покупка", BuySymbol, Ask.Price, quantity, bybitRestClient))
                             {
                                 return true;
                             }
@@ -867,7 +867,7 @@ namespace MyGridBot
                                 catch
                                 {
                                     Console.WriteLine();
-                                    if (CheckExchangeOrderStatus("ByBit", "покупка", BuySymbol, Ask.Price, quantity))
+                                    if (await CheckExchangeOrderStatusByBit("ByBit", "покупка", BuySymbol, Ask.Price, quantity, bybitRestClient))
                                     {
                                         return true;
                                     }
@@ -962,7 +962,7 @@ namespace MyGridBot
             catch
             {
                 Console.WriteLine();
-                if (CheckExchangeOrderStatus("ByBit", "покупка", BuySymbol, price, quantity))
+                if (await CheckExchangeOrderStatusByBit("ByBit", "покупка", BuySymbol, price, quantity, bybitRestClient))
                 {
                     return true;
                 }
@@ -996,7 +996,7 @@ namespace MyGridBot
                 catch
                 {
                     Console.WriteLine();
-                    if (CheckExchangeOrderStatus("ByBit", "продажа", SellSymbol, price, quantity))
+                    if (await CheckExchangeOrderStatusByBit("ByBit", "продажа", SellSymbol, price, quantity, bybitRestClient))
                     {
                         return true;
                     }
@@ -1023,7 +1023,7 @@ namespace MyGridBot
                         {
                             Console.WriteLine($" {result.Error.Code} {result.Error.Message}");
                             Console.WriteLine();
-                            if (CheckExchangeOrderStatus("ByBit", "продажа", SellSymbol, price, quantity))
+                            if (await CheckExchangeOrderStatusByBit("ByBit", "продажа", SellSymbol, price, quantity, bybitRestClient))
                             {
                                 return true;
                             }
@@ -1056,7 +1056,7 @@ namespace MyGridBot
                         {
                             Console.WriteLine($" {result.Error.Code} {result.Error.Message}");
                             Console.WriteLine();
-                            if (CheckExchangeOrderStatus("ByBit", "продажа", SellSymbol, price, quantity))
+                            if (await CheckExchangeOrderStatusByBit("ByBit", "продажа", SellSymbol, price, quantity, bybitRestClient))
                             {
                                 return true;
                             }
@@ -1089,7 +1089,7 @@ namespace MyGridBot
                         catch
                         {
                             Console.WriteLine();
-                            if (CheckExchangeOrderStatus("ByBit", "продажа", SellSymbol, Bid.Price, quantity))
+                            if (await CheckExchangeOrderStatusByBit("ByBit", "продажа", SellSymbol, Bid.Price, quantity, bybitRestClient))
                             {
                                 return true;
                             }
@@ -1114,7 +1114,7 @@ namespace MyGridBot
                                 catch
                                 {
                                     Console.WriteLine();
-                                    if (CheckExchangeOrderStatus("ByBit", "продажа", SellSymbol, Bid.Price, quantity))
+                                    if (await CheckExchangeOrderStatusByBit("ByBit", "продажа", SellSymbol, Bid.Price, quantity, bybitRestClient))
                                     {
                                         return true;
                                     }
@@ -1208,7 +1208,7 @@ namespace MyGridBot
             catch
             {
                 Console.WriteLine();
-                if (CheckExchangeOrderStatus("ByBit", "продажа", SellSymbol, price, quantity))
+                if (await CheckExchangeOrderStatusByBit("ByBit", "продажа", SellSymbol, price, quantity, bybitRestClient))
                 {
                     return true;
                 }
@@ -1241,7 +1241,7 @@ namespace MyGridBot
                 catch (Exception ex)
                 {
                     Console.WriteLine();
-                    if (CheckExchangeOrderStatus("MEXC", "покупка", BuySymbol, price, quantity))
+                    if (await CheckExchangeOrderStatusMEXC("MEXC", "покупка", BuySymbol, price, quantity, mexcRestClient))
                     {
                         return true;
                     }
@@ -1266,7 +1266,7 @@ namespace MyGridBot
                         catch (Exception ex)
                         {
                             Console.WriteLine();
-                            if (CheckExchangeOrderStatus("MEXC", "покупка", BuySymbol, price, quantity))
+                            if (await CheckExchangeOrderStatusMEXC("MEXC", "покупка", BuySymbol, price, quantity, mexcRestClient))
                             {
                                 return true;
                             }
@@ -1297,7 +1297,7 @@ namespace MyGridBot
                         }
                         else if (resultOrderBuy.Error.Message == "Request timed out")
                         {
-                            if (CheckExchangeOrderStatus("MEXC", "покупка", BuySymbol, price, quantity))
+                            if (await CheckExchangeOrderStatusMEXC("MEXC", "покупка", BuySymbol, price, quantity, mexcRestClient))
                             {
                                 return true;
                             }
@@ -1352,7 +1352,7 @@ namespace MyGridBot
             catch
             {
                 Console.WriteLine();
-                if (CheckExchangeOrderStatus("MEXC", "покупка", BuySymbol, price, quantity))
+                if (await CheckExchangeOrderStatusMEXC("MEXC", "покупка", BuySymbol, price, quantity, mexcRestClient))
                 {
                     return true;
                 }
@@ -1385,7 +1385,7 @@ namespace MyGridBot
                 catch (Exception ex)
                 {
                     Console.WriteLine();
-                    if (CheckExchangeOrderStatus("MEXC", "продажа", SellSymbol, price, quantity))
+                    if (await CheckExchangeOrderStatusMEXC("MEXC", "продажа", SellSymbol, price, quantity, mexcRestClient))
                     {
                         return true;
                     }
@@ -1410,7 +1410,7 @@ namespace MyGridBot
                         catch
                         {
                             Console.WriteLine();
-                            if (CheckExchangeOrderStatus("MEXC", "продажа", SellSymbol, price, quantity))
+                            if (await CheckExchangeOrderStatusMEXC("MEXC", "продажа", SellSymbol, price, quantity, mexcRestClient))
                             {
                                 return true;
                             }
@@ -1440,7 +1440,7 @@ namespace MyGridBot
                         }
                         else if (resultOrderSell.Error.Message == "Request timed out")
                         {
-                            if (CheckExchangeOrderStatus("MEXC", "продажа", SellSymbol, price, quantity))
+                            if (await CheckExchangeOrderStatusMEXC("MEXC", "продажа", SellSymbol, price, quantity, mexcRestClient))
                             {
                                 return true;
                             }
@@ -1500,6 +1500,129 @@ namespace MyGridBot
 
         static public bool CheckExchangeOrderStatus(string exchange, string typeBS, string symbol, decimal price, decimal quantity)
         {
+            Console.WriteLine($" Получили ошибку, зайдите на биржу: {exchange}\n" +
+                              $" В историю ордеров, проверьте данный ордер:\n" +
+                              $" Торговая пара: {symbol}\n" +
+                              $" Цена {typeBS}: {price}\n" +
+                              $" Кол-во монет: {quantity}");
+            Console.WriteLine(" Исполнилась ли ваша заявка на бирже?\n" +
+                              " Если исполнилась: Нажмите на кнопку (Y)\n" +
+                              " Если не исполнилась: Нажмите на кнопку (N)");
+            bool YesNo = false;
+            while (true)
+            {
+                ConsoleKeyInfo keyInfo = Console.ReadKey();
+
+                // Проверяем, какую клавишу нажал пользователь
+                char keyChar = char.ToUpper(keyInfo.KeyChar); // Приводим к верхнему регистру для упрощения проверки
+
+                if (keyChar == 'Y' || keyChar == 'Н')
+                {
+                    YesNo = true; break;
+                }
+                else if (keyChar == 'N' || keyChar == 'Т')
+                {
+                    YesNo = false; break;
+                }
+                else
+                {
+                    Console.WriteLine(" Вы не нажали 'Y', 'Н', 'N' или 'Т'.");
+                    Console.WriteLine("Исполнилась ли ваша заявка на бирже? (Y/N):");
+                }
+            }
+            return YesNo;
+        }
+        static public async Task<bool> CheckExchangeOrderStatusByBit(string exchange, string typeBS, string symbol, decimal price, decimal quantity, BybitRestClient bybitRestClient)
+        {
+            while (true)
+            {
+                try
+                {
+                    var history = await bybitRestClient.V5Api.Trading.GetOrderHistoryAsync(Bybit.Net.Enums.Category.Spot);
+                    if (history.Error == null)
+                    {
+                        var order = history.Data.List.First();
+                        if (order.Price == price && order.Status == Bybit.Net.Enums.V5.OrderStatus.Filled)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    await Task.Delay(1000);
+                }
+            }
+
+            Console.WriteLine($" Получили ошибку, зайдите на биржу: {exchange}\n" +
+                              $" В историю ордеров, проверьте данный ордер:\n" +
+                              $" Торговая пара: {symbol}\n" +
+                              $" Цена {typeBS}: {price}\n" +
+                              $" Кол-во монет: {quantity}");
+            Console.WriteLine(" Исполнилась ли ваша заявка на бирже?\n" +
+                              " Если исполнилась: Нажмите на кнопку (Y)\n" +
+                              " Если не исполнилась: Нажмите на кнопку (N)");
+            bool YesNo = false;
+            while (true)
+            {
+                ConsoleKeyInfo keyInfo = Console.ReadKey();
+
+                // Проверяем, какую клавишу нажал пользователь
+                char keyChar = char.ToUpper(keyInfo.KeyChar); // Приводим к верхнему регистру для упрощения проверки
+
+                if (keyChar == 'Y' || keyChar == 'Н')
+                {
+                    YesNo = true; break;
+                }
+                else if (keyChar == 'N' || keyChar == 'Т')
+                {
+                    YesNo = false; break;
+                }
+                else
+                {
+                    Console.WriteLine(" Вы не нажали 'Y', 'Н', 'N' или 'Т'.");
+                    Console.WriteLine("Исполнилась ли ваша заявка на бирже? (Y/N):");
+                }
+            }
+            return YesNo;
+        }
+        static public async Task<bool> CheckExchangeOrderStatusMEXC(string exchange, string typeBS, string symbol, decimal price, decimal quantity, MexcRestClient mexcRestClient)
+        {
+            while (true)
+            {
+                try
+                {
+                    var history = await mexcRestClient.SpotApi.Trading.GetOrdersAsync(symbol);
+                    if (history.Error == null)
+                    {
+                        var order = history.Data.First();
+                        if (order.Price == price && order.Status == Mexc.Net.Enums.OrderStatus.Filled)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    await Task.Delay(1000);
+                }
+            }
             Console.WriteLine($" Получили ошибку, зайдите на биржу: {exchange}\n" +
                               $" В историю ордеров, проверьте данный ордер:\n" +
                               $" Торговая пара: {symbol}\n" +

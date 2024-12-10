@@ -14,7 +14,7 @@ namespace MyGridBot
         static async Task Main(string[] args)
         {
             var dateTime = DateTime.Now;
-            Console.Title = "BoViGridBot V2.6.6";
+            Console.Title = "BoViGridBot V2.6.7";
             Grafic.GreetUser();
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -24,7 +24,7 @@ namespace MyGridBot
                " Если MEXC нажмите 1 и нажмите ENTER");
             if (Console.ReadLine() == "0")
             {
-                Console.Title = "BoViGridBot V2.6.6 BYBIT";
+                Console.Title = "BoViGridBot V2.6.7 BYBIT";
                 SettingStart.Start();
                 BybitRestClient bybitRestClient = new BybitRestClient(options =>
                 {
@@ -50,7 +50,7 @@ namespace MyGridBot
             }
             else
             {
-                Console.Title = "BoViGridBot V2.6.6 MEXC";
+                Console.Title = "BoViGridBot V2.6.7 MEXC";
                 SettingStart.StartMexc();
                 MexcRestClient mexcRestClient = new MexcRestClient(opts =>
                 {
